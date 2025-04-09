@@ -1,0 +1,32 @@
+.dropdown {
+    width: 100%;
+    position: relative;
+    .dropdown-button-guest-select {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .dropdown-value {
+        font-size: 16px;
+        color: #2f2f2f;
+        font-weight: 400;
+    }
+    .double-dropdown-content {
+        z-index: 1;
+        position: absolute;
+        top: 32px;
+        left: -16px;
+        width: 292px;
+        background-color: white;
+        color: #2f2f2f;
+        border: 1px solid #c1c2c2;
+        border-radius: 5px;
+        .option {
+            padding: 18px 17px 0px;
+        }
+        .option:last-child {
+            padding-bottom: 16px;
+        }
+    }
+}

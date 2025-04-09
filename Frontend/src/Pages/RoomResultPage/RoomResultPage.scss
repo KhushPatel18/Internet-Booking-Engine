@@ -1,0 +1,238 @@
+.room-result-container {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    .room-result-header {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 3;
+        height: 84px;
+    }
+    .banner-room-result {
+        height: 18.75%;
+        img {
+            height: 100%;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+        @media (width < 1024px) {
+            display: none;
+        }
+    }
+    .steps {
+        height: 5.75rem;
+        padding: 0.75rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e4e4e4;
+    }
+    .filter-result-wrapper {
+        padding-inline: 5.25rem;
+        @media (width < 1363px) {
+            padding-inline: 3rem;
+        }
+        @media (width < 1292px) {
+            padding-inline: 1rem;
+        }
+        .filters-wrapper {
+            height: 4.375rem;
+            margin-top: 1.875rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(133, 134, 133, 1);
+            font-size: 1rem;
+            min-width: 1198px;
+            @media (width < 1226px) {
+                min-width: 0px;
+            }
+            @media (width < 1024px) {
+                flex-direction: column;
+                height: fit-content;
+                margin-top: 0;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(193, 194, 194, 1);
+                .guests-filter,
+                .rooms-filter,
+                .beds-filter,
+                .date-filter {
+                    width: 100% !important;
+                    border: none !important;
+                    border-bottom: 1px solid rgba(193, 194, 194, 1) !important;
+                }
+                .date-filter {
+                    margin-bottom: 10px;
+                }
+                .search-dates-btn {
+                    width: 217px;
+                }
+            }
+            .guests-filter {
+                height: 100%;
+                width: 21%;
+                border: 1px solid rgba(193, 194, 194, 1);
+                border-radius: 4px;
+                padding: 12px 6px;
+                min-width: 246px;
+            }
+            .rooms-filter {
+                height: 100%;
+                width: 11%;
+                border: 1px solid rgba(193, 194, 194, 1);
+                border-radius: 4px;
+                padding: 12px 6px;
+            }
+            .beds-filter {
+                height: 100%;
+                width: 11%;
+                border: 1px solid rgba(193, 194, 194, 1);
+                border-radius: 4px;
+                padding: 12px 6px;
+            }
+            .date-filter {
+                height: 100%;
+                width: 40%;
+                border: 1px solid rgba(193, 194, 194, 1);
+                border-radius: 4px;
+                padding: 12px 6px;
+            }
+            .search-dates-btn {
+                a {
+                    color: white;
+                }
+                height: 100%;
+                cursor: pointer;
+                font-size: 0.875rem;
+                font-weight: 700;
+                background: transparent;
+                background-color: #26266d;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 0.75rem 1.25rem;
+                min-width: 140px;
+            }
+        }
+        .cards-narrow-results-wrapper {
+            display: flex;
+            gap: 22px;
+            @media (width < 838px) {
+                flex-direction: column;
+                .narrow-results {
+                    width: 100% !important;
+                    align-self: center !important;
+                }
+            }
+            .narrow-results {
+                width: 25.35%;
+                height: fit-content;
+                background-color: #eff0f1;
+                border-radius: 5px;
+                padding: 26px 30px;
+                @media (width < 1186px) {
+                    padding: 13px 15px;
+                }
+            }
+            .cards-itinerary-wrapper {
+                width: 100%;
+                .cards-itinerary-wrapper-head {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.95rem;
+                    @media (width < 520px) {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .room-results-title {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                    }
+                    .result-pagination-sort-filter-wrapper {
+                        .pagination-wrapper {
+                            display: flex;
+                            gap: 5px;
+                            align-items: center;
+                            .pagination-info {
+                                padding-bottom: 3px;
+                            }
+                        }
+                        display: flex;
+                        align-items: center;
+                        gap: 12.5px;
+                        font-size: 1rem;
+                        color: #2f2f2f;
+                        font-weight: 700;
+                        .sort-filter {
+                            display: flex;
+                            gap: 5px;
+                            justify-content: space-between;
+                            margin-left: 7px;
+                        }
+                    }
+                }
+                .cards-itinerary-wrapper-main {
+                    display: flex;
+                    gap: 22px;
+
+                    .no-rooms-message {
+                        color: #c67979;
+                        font-size: 2rem;
+                        font-weight: 500;
+                    }
+                    .itinerary {
+                        width: 23vw;
+                        max-width: 450px;
+                        min-width: 313px;
+                        height: fit-content;
+                        background-color: #eff0f1;
+                        border-radius: 5px;
+                    }
+                    .cards {
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-wrap: wrap;
+                        height: 600px;
+                        @media (width < 1024px) {
+                            height: 60vh;
+                        }
+                        overflow: scroll;
+                        padding-left: 5px;
+                        gap: 20px;
+                        .card {
+                            width: 20vw;
+                            max-width: 400px;
+                            min-width: 293px;
+                            @media (width <=1232px) {
+                                flex-grow: 0.8 !important;
+                            }
+                        }
+                        @media (width <= 1024px) {
+                            .card {
+                                width: 48%;
+                            }
+                        }
+                        @media (width < 644px) {
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                            margin: auto;
+                            .card {
+                                width: 100%;
+                            }
+                        }
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

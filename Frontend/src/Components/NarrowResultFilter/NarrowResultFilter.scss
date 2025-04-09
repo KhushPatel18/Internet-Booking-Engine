@@ -1,0 +1,31 @@
+.narrow-result-filter-container{
+    padding-bottom: 13px;
+    border-bottom: 1px solid #C1C2C2;
+    
+    .narrow-result-filter-button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .narrow-result-filter-value{
+            font-size: 1rem;
+            font-weight: 400;
+            
+        }
+    }
+    .narrow-result-filter-options{
+        margin-top: 9px;
+        .narrow-result-filter-option{
+            display: flex;
+            align-items: center;
+            gap: 5px;   
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 9px;
+            input{
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}

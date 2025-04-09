@@ -1,0 +1,164 @@
+.room-modal-container {
+    background-color: #fff;
+    height: 80vh;
+    color: rgba(0, 0, 0, 1);
+    position: relative;
+    .room-name {
+        position: absolute;
+        top: 300px;
+        left: 8%;
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+        z-index: 100;
+        @media (width < 500px) {
+            left: 20px;
+        }
+        @media (width < 450px) {
+            left: 10px;
+        }
+    }
+    .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 22px;
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+        z-index: 100;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .close-modal:hover {
+        transform: scale(1.015);
+    }
+    .room-name:hover {
+        transform: scale(1.015);
+    }
+    .room-modal-carousal {
+        height: 381px;
+        width: 100%;
+    }
+    .room-modal-content-wrapper {
+        position: relative;
+        padding: 35px;
+        @media (width < 510px) {
+            padding: 16px;
+        }
+        @media (width < 450px) {
+            padding: 8px;
+        }
+        display: flex;
+        gap: 5vw;
+        .room-modal-info {
+            padding-left: 80px;
+            @media (width < 1286px) {
+                padding-left: 0px;
+            }
+            width: 48%;
+            .room-modal-info-description {
+                margin-bottom: 26px;
+                .room-card-info-header {
+                    width: 100%;
+                    color: rgba(93, 93, 93, 1);
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 21px;
+                    .occupancy {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        margin-right: 35px;
+                        margin-bottom: 0px !important;
+                    }
+                    .beds {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        margin-right: 16px;
+                    }
+                }
+                .room-model-description {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    text-align: justify;
+                }
+            }
+            .room-modal-deals-container {
+                margin-bottom: 2rem;
+                .room-modal-deals-title {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    margin-bottom: 23px;
+                }
+                .deal-card {
+                    margin-bottom: 1rem;
+                    min-width: 400px;
+                }
+            }
+            .promo-code-wrapper {
+                .promo-text {
+                    font-size: 14px;
+                    color: rgba(47, 47, 47, 1);
+                    margin-bottom: 5px;
+                }
+                .promo-code {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    .promo-code-input {
+                        padding: 0.75rem 1rem;
+                        border: 1px solid black;
+                        border-radius: 5px;
+                        outline: #26266d;
+                    }
+                    .apply-btn {
+                        cursor: pointer;
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                        background: transparent;
+                        background-color: #26266d;
+                        color: #fff;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 0.75rem 1.25rem;
+                    }
+                }
+            }
+        }
+        .room-modal-info-amenities {
+            width: 40%;
+            @media (width <= 896px) {
+                width: 95%;
+            }
+            .amenity-title {
+                margin-bottom: 21px;
+            }
+            .amenities {
+                width: 98%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                flex-wrap: wrap;
+                height: 15%;
+                @media (width <= 896px) {
+                    flex-wrap: wrap !important;
+                }
+                @media (width < 1286px) {
+                    flex-wrap: nowrap;
+                }
+                .amenity {
+                    display: flex;
+                    gap: 9px;
+                }
+                .amenity-text {
+                    width: fit-content;
+                }
+                .amenity:last-child{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

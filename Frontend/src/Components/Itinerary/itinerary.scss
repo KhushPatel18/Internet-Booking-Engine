@@ -1,0 +1,121 @@
+.itinerary-container {
+    height: 100%;
+    padding: 17px 21px;
+    color: #5d5d5d;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    .itinerary-title {
+        color: #000000;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 14px;
+    }
+    .dropdown-buttons {
+        position: absolute;
+        top: 17px;
+        right: 15px;
+    }
+
+    .resort-name-remove {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        .itinerary-resort-name {
+            color: #000000;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .itinerary-remove-btn {
+            background: transparent;
+            border: none;
+            color: #006eff;
+        }
+    }
+
+    .itinerary-date-guest-details {
+        margin-bottom: 8px;
+    }
+
+    .itinerary-room-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .itinerary-date-price-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    .itinerary-room-itirnaryDetails {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        margin-top: 6px;
+    }
+    .border-line {
+        width: 95%;
+        margin: auto;
+        border: 1px solid #5d5d5d;
+        margin-top: 17px;
+        margin-bottom: 11px;
+    }
+    .special-promotions-price-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        .special-promotions-info {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+    }
+
+    .itinerary-total-taxes-section {
+        margin-bottom: 12px;
+        .itinerary-total-title-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .special-promotions-price-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            .itinerary-special-promotions-info {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+            }
+        }
+    }
+
+    .itinerary-due-section {
+        margin-bottom: 23px;
+        .itinerary-total-title-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+    }
+
+    .itinerary-checkout-btn {
+        width: 59%;
+        margin: auto;
+        border: 3px solid #26266d;
+        padding: 12px 24px;
+        font-weight: 700;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+    }
+}

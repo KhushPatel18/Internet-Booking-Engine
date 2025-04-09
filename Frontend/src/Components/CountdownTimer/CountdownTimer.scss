@@ -1,0 +1,15 @@
+.timer-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.8rem;
+    color: white;
+    background-color: #9794b7;
+    padding: 8px;
+    justify-content: center;
+
+    .timer-icon {
+        font-size: 2rem;
+        color: white;
+    }
+}

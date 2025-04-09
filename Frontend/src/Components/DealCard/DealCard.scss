@@ -1,0 +1,70 @@
+.deal-card-container {
+    display: flex;
+    height: 130px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(239, 240, 241, 1);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+    .deal-card-title-description-wrapper {
+        height: 100%;
+        padding: 26px 23px;
+        @media (width < 480px) {
+            padding: 16px 12px;
+        }
+        width: 68%;
+        .deal-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .deal-card-description {
+            font-size: 14px;
+            color: rgba(93, 93, 93, 1);
+            font-weight: 400;
+        }
+    }
+    .price-btn-wrapper {
+        width: 32%;
+        min-width: 183px;
+        max-width: 210px;
+        height: 100%;
+        padding-right: 22px;
+        padding-top: 26px;
+        padding-bottom: 15px;
+        @media (width < 480px) {
+            padding-right: 12px;
+            padding-top: 16px;
+            padding-bottom: 10px;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: rgba(239, 240, 241, 1);
+        .room-modal-price {
+            .room-modal-price-value {
+                font-size: 24px;
+                font-weight: 700;
+            }
+            .room-modal-price-text {
+                font-size: 14px;
+                color: rgba(93, 93, 93, 1);
+                font-weight: 400;
+            }
+            margin-bottom: 10px;
+        }
+
+        .room-modal-select-btn {
+            height: auto;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            background: transparent;
+            background-color: #26266d;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 7.5px 17px;
+        }
+    }
+}

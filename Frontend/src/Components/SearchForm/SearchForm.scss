@@ -1,0 +1,105 @@
+.search-form-container {
+    height: 585px;
+    width: 380px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 4em 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: absolute;
+    top: 56px;
+    left: 78px;
+    font-size: 14px;
+    color: #2f2f2f;
+    box-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3),
+        0px 4px 10px rgba(0, 0, 0, 0.3);
+    .label {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 7px;
+    }
+    .properties {
+        padding: 12px 16px;
+        color: #c1c2c2;
+        border: 1px solid black;
+        border-radius: 4px;
+        width: 292px;
+    }
+    .select-dates {
+        .select-menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid black;
+            border-radius: 4px;
+            width: 292px;
+        }
+    }
+    .guests-room-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 292px;
+        .guests-select {
+            margin-bottom: 12px;
+            .guests {
+                width: 100%;
+                padding: 12px 16px;
+                font-size: 16px;
+                font-weight: 400;
+                border: 1px solid black;
+                border-radius: 4px;
+            }
+        }
+        .rooms-select {
+            margin-bottom: 12px;
+            width: 77px;
+            .rooms {
+                width: 100%;
+                padding: 12px 16px;
+                font-size: 16px;
+                font-weight: 400;
+                border: 1px solid black;
+                border-radius: 4px;
+            }
+        }
+        .wheelchair {
+            display: flex;
+            align-items: center;
+            input {
+                height: 16px;
+                width: 16px;
+                border: 1px solid #c1c2c2;
+                border-radius: 1px;
+            }
+            gap: 3px;
+        }
+    }
+    .search-btn {
+        padding: 12px 20px;
+        background-color: #26266d;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-weight: 700;
+        font-size: 14px;
+        width: 140px;
+        position: absolute;
+        top: 450px;
+        left: 115px;
+        cursor: pointer;
+    }
+    @media (width <= 520px) {
+        top: 55px;
+        left: 55px;
+    }
+    @media (width <= 450px) {
+        top: 20px;
+        left: 17px;
+    }
+}

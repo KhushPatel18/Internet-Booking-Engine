@@ -1,0 +1,107 @@
+$primary: #26266d;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1.3em;
+    padding-left: 5em;
+    padding-right: 3.225em;
+    height: 100%;
+    width: 100%;
+    a{
+        text-decoration: none;
+    }
+    @media (width < 940px) {
+        padding: 2.5em;
+        padding: 1em;
+    }
+    .title-logo-wrapper {
+        display: flex;
+        align-items: center;
+        .logo {
+            img {
+                display: block;
+                width: 103.04px;
+            }
+        }
+        .title {
+            padding: 0.4em;
+            padding-bottom: 0.3em;
+            font-size: 20px;
+            font-weight: 700;
+            color: $primary;
+        }
+    }
+    .hamburger{
+        border: none;
+        background: inherit;
+        display: none;
+        @media (width < 811px) {
+            display: block;
+        }
+        img{
+            height: 32px;
+            width: 32px;
+        }
+    }
+    .right-side-nav {
+        display: flex;
+        width: 40%;
+        justify-content: flex-end;
+        gap: 13%;
+        align-items: center;
+        min-width: 443px;
+        
+        @media (width < 940px) {
+            width: 50%;
+        }
+        @media (width < 811px) {
+            flex-direction: column;
+            min-width: 0px;
+            position: absolute;
+            right : 20px;
+            top: 55px;
+            z-index: 3;
+            border-radius: 4px;  
+            background-color: #d8daf2;
+            width: 130px;
+            padding: 0.5em 0.3em;
+            gap: 10px;
+            
+        }
+        .my-bookings {
+            z-index: 1;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 700;
+            min-width: 113px;
+        }
+        .login {
+            border-radius: 4px;
+            padding: 12px 20px;
+            border: none;
+            background-color: $primary;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 19.6px;
+            margin-left: 20px;
+            @media (width < 940px) {
+                margin-left: 0px;
+            }
+        }
+        .dropdown-wrapper{
+            justify-self: flex-end;
+            display: flex;
+            align-items: center;
+            width: 150px;
+            min-width: 130px;
+            justify-content: space-between;
+            position: relative;
+            @media (width < 811px) {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.tax-break-down-modal-container{
+    width: 409px;
+    padding: 40px 30px;
+    padding-right: 65px;
+    font-size: 1rem;
+    font-weight: 400;
+    .special-deal-close-modal {
+        position: absolute;
+        font-size: 1.25rem;
+        font-weight: 600;
+        top: 12px;
+        right: 12px;
+        background: transparent;
+        border: none;
+    }
+    .special-deal-close-modal:hover{
+        transform: scale(1.15);
+    }
+    .tax-break-down-modal-title{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+    .nightly-rate-per-room{
+        margin-bottom: 22px;
+        margin-top: 8px;
+    }
+    .promotion-title{
+        margin-bottom: 17px;
+    }
+    .room-total-modal{
+        margin-top: 19px;
+    }
+    .day-price-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    .modal-texes{
+        margin-bottom: 8px;
+    }
+    .line-brake{
+        border: 1px solid rgba(93, 93, 93, 1);
+        margin-block: 19px;
+    }
+}
+a{
+    text-decoration: none;
+}

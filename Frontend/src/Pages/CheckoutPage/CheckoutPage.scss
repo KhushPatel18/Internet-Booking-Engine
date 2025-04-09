@@ -1,0 +1,127 @@
+.checkout-container {
+  box-sizing: border-box;
+  height: auto;
+  width: 100%;
+  .header {
+    height: 84px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #fff;
+  }
+  .footer {
+    height: 86px;
+  }
+  .checkout-phone-help {
+    display: none;
+  }
+  .checkout-steps {
+    height: 5.75rem;
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e4e4e4;
+  }
+  .checkout-billing {
+    min-height: calc(100vh - 310px);
+    display: flex;
+    flex-basis: true;
+    padding: 2rem 5.125rem;
+
+    .payment {
+      flex-basis: 80%;
+      padding-right: 8.25rem;
+    }
+    .itinary-details {
+      flex-basis: 30%;
+      display: flex;
+      flex-direction: column;
+      .itinary {
+        background-color: #e4e4e4;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .checkout-container .checkout-billing {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .checkout-container .checkout-billing .payment {
+    flex-basis: 100%;
+    padding-right: 0px;
+  }
+  .checkout-container .checkout-billing .itinary-details {
+    flex-basis: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .checkout-container .checkout-billing .itinary-details .checkout-help {
+    flex-basis: 100%;
+    width: 50%;
+    height: 1vh;
+  }
+  .checkout-container .checkout-billing .itinary-details .checkout-help {
+    display: none;
+  }
+  .checkout-container .checkout-billing .itinary-details .checkout-help .need-help-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .checkout-container .checkout-phone-help {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .checkout-container .checkout-phone-help .need-help-container .contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+  }
+  .checkout-container .checkout-phone-help .need-help-container .contacts .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    padding: 0px;
+  }
+
+  .checkout-container .checkout-phone-help .need-help-container .contacts .contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+  }
+  .checkout-container .checkout-phone-help .need-help-container .timings {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 0px;
+    margin-top: 0px;
+  }
+  .itinary-details {
+    order: 0;
+  }
+  .itinary {
+    min-width: 340px;
+  }
+  .need-help-container {
+    max-width: 340px;
+    margin: auto;
+    padding: 0;
+  }
+  .payment {
+    order: 1;
+  }
+}

@@ -1,0 +1,138 @@
+version: '3.8'
+
+services:
+  # PostgreSQL database for Spring Boot backend
+  postgres_backend:
+    image: postgres:15-alpine
+    container_name: postgres_backend
+    environment:
+      POSTGRES_USER: ${POSTGRES_BACKEND_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_BACKEND_PASSWORD:-postgres}
+      POSTGRES_DB: ${BACKEND_DB:-backend_db}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${BACKEND_DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_backend_data:/var/lib/postgresql/data
+      - ./Backend/database/init:/docker-entrypoint-initdb.d
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_BACKEND_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL database for GraphQL server
+  postgres_graphql:
+    image: postgres:15-alpine
+    container_name: postgres_graphql
+    environment:
+      POSTGRES_USER: ${POSTGRES_GRAPHQL_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_GRAPHQL_PASSWORD:-postgres}
+      POSTGRES_DB: ${GRAPHQL_DB:-bookingengine}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${GRAPHQL_DB_PORT:-5433}:5432"
+    volumes:
+      - postgres_graphql_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_GRAPHQL_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Spring Boot backend
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_backend:5432/${BACKEND_DB:-backend_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_BACKEND_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_BACKEND_PASSWORD:-postgres}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: ${SPRING_JPA_HIBERNATE_DDL_AUTO:-update}
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-docker}
+      SERVER_PORT: ${BACKEND_PORT:-8080}
+      GRAPHQL_SERVER_URL: http://graphql:${GRAPHQL_PORT:-4000}/graphql
+    ports:
+      - "${BACKEND_PORT:-8080}:${BACKEND_PORT:-8080}"
+    volumes:
+      - ./Backend/src:/app/src
+      - backend_maven_repo:/root/.m2
+    depends_on:
+      postgres_backend:
+        condition: service_healthy
+    networks:
+      - app_network
+    restart: unless-stopped
+    entrypoint: ["/scripts/backend-init.sh"]
+
+  # GraphQL server
+  graphql:
+    build:
+      context: ./GraphQL
+      dockerfile: Dockerfile
+    container_name: graphql
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_GRAPHQL_USER:-postgres}:${POSTGRES_GRAPHQL_PASSWORD:-postgres}@postgres_graphql:5432/${GRAPHQL_DB:-bookingengine}
+      POSTGRES_USER: ${POSTGRES_GRAPHQL_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_GRAPHQL_PASSWORD:-postgres}
+      POSTGRES_DB: ${GRAPHQL_DB:-bookingengine}
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: ${GRAPHQL_PORT:-4000}
+      CORS_ORIGIN: http://localhost:${FRONTEND_PORT:-3000}
+    ports:
+      - "${GRAPHQL_PORT:-4000}:${GRAPHQL_PORT:-4000}"
+    volumes:
+      - ./GraphQL:/app
+      - /app/node_modules
+      - ./scripts/graphql-init.sh:/docker-entrypoint.sh
+    depends_on:
+      postgres_graphql:
+        condition: service_healthy
+    networks:
+      - app_network
+    restart: unless-stopped
+    entrypoint: ["/docker-entrypoint.sh"]
+    command: ["yarn", "dev"]
+
+  # React frontend
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    environment:
+      VITE_API_URL: http://localhost:${BACKEND_PORT:-8080}/api
+      NODE_ENV: ${NODE_ENV:-development}
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    volumes:
+      - ./Frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+      - graphql
+    networks:
+      - app_network
+    restart: unless-stopped
+
+networks:
+  app_network:
+    driver: bridge
+    name: ${NETWORK_NAME:-app_network}
+
+volumes:
+  postgres_backend_data:
+    name: ${VOLUME_PREFIX:-app}_postgres_backend_data
+  postgres_graphql_data:
+    name: ${VOLUME_PREFIX:-app}_postgres_graphql_data
+  backend_maven_repo:
+    name: ${VOLUME_PREFIX:-app}_backend_maven_repo

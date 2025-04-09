@@ -1,0 +1,220 @@
+html {
+    font-size: 16px;
+}
+.cal-cont {
+    font-size: 16px;
+}
+.select-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #fff;
+}
+.date-dropdown-container {
+    background-color: #fff;
+    position: absolute;
+    padding: 1.5rem 1.5rem;
+    z-index: 2;
+    box-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3),
+        0px 4px 10px rgba(0, 0, 0, 0.3);
+    @media (width <= 1023px) {
+        width: 370px;
+        left: 5px;
+        padding: 1.5rem 1rem;
+    }
+}
+.calender {
+    border-bottom: 1px solid #c1c2c2;
+    .rdrDateRangePickerWrapper {
+        width: 100%;
+        background-color: white;
+
+        .rdrCalendarWrapper {
+            width: 100%;
+
+            .rdrMonthAndYearWrapper {
+                padding: 0;
+                position: absolute;
+                top: 0.3rem;
+                left: -0.5rem;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                @media (width <= 1023px) {
+                    top : 0.2rem;   
+                }
+            }
+            .rdrMonths {
+                display: flex;
+                justify-content: space-between;
+                .rdrMonth {
+                    padding: 0;
+                    width: 26.5rem;
+                    .rdrMonthName {
+                        padding: 0;
+                        font-size: 1rem;
+                        padding-left: 15px;
+                    }
+                    .rdrWeekDays {
+                        font-size: 1rem;
+                        @media (width <= 1023px) {
+                            width: 350px;
+                            margin-left: -8px;
+                        }
+                    }
+                    .rdrDays {
+                        @media (width <= 1023px) {
+                            width: 354px;
+                            margin-left: -8px;
+                        }
+                        .rdrDay {
+                            width: 3.125rem;
+                            height: 3.375rem;
+                            margin: 0 0.3125rem;
+                            margin-bottom: 0.25rem;
+                            @media (width <= 1023px) {
+                                margin: 0.25px;
+                            }
+                            .rdrDayNumber {
+                                height: 100%;
+                                .date-price-container {
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    line-height: initial;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    .date {
+                                        font-size: 1rem;
+                                        font-weight: 700;
+                                    }
+                                    .price,
+                                    .discounted-price {
+                                        font-size: 0.875rem;
+                                    }
+                                    .discounted-price::after{
+                                        background-color: #26266d;
+                                    }
+                                }
+                            }
+                            .rdrDayNumber:hover {
+                                background-color: #26266d;
+                                .date-price-container {
+                                    span {
+                                        color: white;
+                                    }
+                                    .discounted-price::after{
+                                        background-color: white;
+                                    }
+                                }
+                            }
+                            .rdrInRange {
+                                background-color: #c1c2c2;
+                                height: 3.375rem;
+                                border-radius: 0;
+                            }
+                            .rdrInRange + .rdrDayNumber {
+                                .date-price-container {
+                                    span {
+                                        color: black;
+                                    }
+                                }
+                            }
+                            .rdrStartEdge,
+                            .rdrEndEdge {
+                                background-color: #26266d;
+                                border-radius: 0;
+                                height: 3.375rem;
+                            }
+                            .rdrDayStartPreview,
+                            .rdrDayEndPreview,
+                            .rdrDayInPreview {
+                                border: none;
+                            }
+                        }
+                    }
+                    .rdrDayPassive,
+                    .rdrDayDisabled {
+                        color: #d6cbcb;
+                        background: transparent;
+                    }
+                    .rdrDayDisabled {
+                        .date-price-container {
+                            .price,
+                            .discounted-price {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .rdrDefinedRangesWrapper,
+        .rdrDateDisplayWrapper,
+        .rdrMonthAndYearPickers {
+            display: none;
+        }
+    }
+    .rdrDay:has(> .rdrDayEndPreview),
+    .rdrDay:has(> .rdrDayStartPreview) {
+        .rdrDayNumber {
+            background-color: #26266d;
+        }
+    }
+    .rdrDay:has(> .rdrDayInPreview) {
+        .rdrDayNumber {
+            background-color: #c1c2c2;
+        }
+    }
+}
+
+.apply-btn-container {
+    padding: 1.25rem 0.75rem 0.5rem;
+    display: flex;
+    flex-direction: column;     
+    gap: 6px;
+    align-items: flex-end;
+    position: relative;
+    .minimum-price-in-range{
+        font-size: 1.25rem;
+        font-weight: 700;
+        position: absolute;
+        right: 150px;
+        top: 28px;
+    }
+    .apply-btn {
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 700;
+        background: transparent;
+        background-color: #26266d;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 0.75rem 1.25rem;
+    }
+    .end-date-select-message {
+        color: #d0182b;
+        width: 171px;
+        font-size: 14px;
+    }
+   
+}
+.rdrDayPassive {
+    color: #C1C2C2 !important;
+    opacity: 0.4;
+
+    .rdrDayNumber {
+        background-color: white !important;
+        .price,.discounted-price{
+            display: none;
+        }
+    }
+}

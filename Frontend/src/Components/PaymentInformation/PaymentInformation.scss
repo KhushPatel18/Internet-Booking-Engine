@@ -1,0 +1,142 @@
+.expanded {
+    display: none;
+  }
+  .payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    .payment-title {
+      width: 100%;
+      background-color: #eff0f1;
+      border-radius: 5px;
+      font-weight: 700;
+      font-family: lato;
+      font-size: 20px;
+      color: black;
+      padding: 7px;
+      margin-left: 10px;
+    }
+    .card {
+      display: flex;
+      flex-direction: row;
+      font-weight: 400;
+      color: #858685;
+      width: 100%;
+      margin-bottom: 1rem;
+      margin-left: 10px;
+      @media (width<=1023px) {
+        flex-direction: column;
+      }
+      .card-name {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        gap: 1vh;
+        @media (width<=1023px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+      .expiry {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        justify-content: space-between;
+        @media (width<=1023px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .expiry-month {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 1vh;
+          .content {
+            width: 95%;
+          }
+        }
+        .expiry-year {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 1vh;
+          .content {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .cvv-code {
+      color: #858685;
+      display: flex;
+      flex-direction: column;
+      font-weight: 400;
+      width: 100%;
+      margin-bottom: 1rem;
+      gap: 1vh;
+      margin-left: 10px;
+      .content {
+        width: 20%;
+        @media (width<=1023px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .offers {
+      display: flex;
+      flex-direction: row;
+      color: #5d5d5d;
+      margin-bottom: 1rem;
+      .checkbox {
+      }
+      .special-offers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .terms-and-policies {
+          margin: 4px;
+        }
+      }
+    }
+    .total-amount {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+      .total-due {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+        font-weight: 400;
+        font-size: 16px;
+        margin-right: 20px;
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2f2f2f;
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+    .next {
+      display: flex;
+      justify-content: flex-end;
+      padding-bottom: 20px;
+    }
+  }
+  
+  .terms-modal-dialog {
+    max-width: 1286px;
+    width: 95%;
+    min-width: 420px;   
+    height: 90%;
+    margin: auto;
+    border: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

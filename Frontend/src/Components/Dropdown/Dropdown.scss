@@ -1,0 +1,14 @@
+.dropdown-header{
+    display: flex;
+    gap: 3px;
+    cursor: pointer;
+}
+.dropdown-button {
+    border: none;
+    background: transparent;
+    outline: none;
+    appearance: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #26266d;
+}

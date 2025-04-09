@@ -1,0 +1,71 @@
+# Ignore compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore dependencies
+/node_modules
+/bower_components
+
+# target in mvn project
+/target
+
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+*.tmp.*
+*.swp
+._*
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Ignore IDE files
+/.idea
+/.vscode
+
+# Ignore editor-specific files
+*.sublime-project
+*.sublime-workspace
+*.vscode/
+*.idea/
+
+# Ignore database files
+*.sqlite
+*.sqlite3
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore macOS metadata
+*.DS_Store
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore yarn logs
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore coverage directory
+/coverage
+
+# Ignore .env files containing credentials
+.env*
+
+# Ignore .vscode settings
+.vscode/settings.json
+
+# Ignore .eslintcache
+.eslintcache
+
+# Ignore .gitignore itself if it is in the project root
+!.gitignore

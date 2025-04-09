@@ -1,0 +1,263 @@
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+
+    width: 100%;
+    .confirmation-header {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 3;
+        height: 84px;
+        // box-shadow:
+        //     2px 2px 5px rgba(0, 0, 0, 0.3),
+        //     0px 4px 10px rgba(0, 0, 0, 0.3);
+        margin-bottom: 16px;
+    }
+
+    .confirmation-main-container {
+        min-height: calc(100vh - 200px);
+        width: 78%;
+        @media (width < 768px) {
+            width: 88%;
+        }
+        @media (width < 650px) {
+            width: 95%;
+        }
+        margin: 0 auto;
+        .confirmation-main-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 33.6px;
+            }
+            .buttons {
+                display: flex;
+                gap: 12px;
+                padding-right: 8px;
+                .print-btn,
+                .email-btn {
+                    background: transparent;
+                    border: none;
+                    padding: 0;
+                    color: rgba(0, 110, 255, 1);
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .confirmation-main-top-container {
+            padding: 28px;
+            @media (width < 600px) {
+                padding: 14px;
+            }
+            border-radius: 5px;
+            border: 1px solid rgba(193, 194, 194, 1);
+            .confirmation-main-top-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 29px;
+                .confirmation-main-top-header-room-details-wrapper {
+                    display: flex;
+                    gap: 1rem;
+                    @media (width < 532px) {
+                        flex-direction: column;
+                    }
+                    .room-name {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                    }
+                    .guests-wrapper {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        .guests-details {
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: rgba(93, 93, 93, 1);
+                        }
+                    }
+                }
+
+                .cancel-room {
+                    background: transparent;
+                    border: none;
+                    padding: 0;
+                    color: rgba(0, 110, 255, 1);
+                    font-size: 1rem;
+                }
+            }
+
+            .confirmation-main-top-middle {
+                display: flex;
+                gap: 1.35rem;
+                padding-bottom: 35px;
+                border-bottom: 1px solid rgba(193, 194, 194, 1);
+                @media (width <= 900px) {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 16px;
+                }
+                .room-image {
+                    margin: auto;
+                    img {
+                        height: 224px;
+                        width: 338px;
+                        display: block;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+                }
+                .confirmation-main-top-middle-details-wrapper {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    .dates-wrapper {
+                        display: flex;
+                        gap: 7px;
+                        height: 112px;
+                        margin-bottom: 7px;
+                        @media (width <= 900px) {
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .date-box {
+                            padding: 13px 0px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 12px;
+                            width: 105px;
+                            border: 1px solid rgba(193, 194, 194, 1);
+                            border-radius: 5px;
+                            .name {
+                                color: rgba(133, 134, 133, 1);
+                            }
+                        }
+                    }
+                    .package-details-wrapper {
+                        margin-bottom: 10px;
+                        .package-heading {
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                            margin-bottom: 5px;
+                        }
+                        .package-description {
+                            font-size: 1rem;
+                            color: rgba(93, 93, 93, 1);
+                            max-width: 44ch;
+                        }
+                    }
+
+                    .instruction-total-wrapper {
+                        justify-self: flex-end;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        @media (width <= 1184px) {
+                            flex-direction: column;
+                            align-items: start;
+                            gap: 7px;
+                        }
+                        .instruction {
+                            font-size: 1rem;
+                            color: rgba(93, 93, 93, 1);
+                            max-width: 44ch;
+                        }
+                        .total {
+                            font-size: 1.25rem;
+                            margin-bottom: 5px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+            .summary-dropdowns {
+                .room-total-details-dropdown,
+                .guest-information-dropdown,
+                .billing-address-dropdown,
+                .payment-information-dropdown {
+                    border-bottom: 1px solid rgba(193, 194, 194, 1);
+                }
+
+                .room-total-details-button,
+                .guest-information-button,
+                .billing-address-button,
+                .payment-information-button {
+                    background: transparent;
+                    border: none;
+
+                    width: 100%;
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    padding: 14px 0px;
+                }
+
+                .room-total-details-value,
+                .guest-information-value {
+                    padding-left: 32px;
+                    @media (width < 600px) {
+                        padding-left: 16px;
+                    }
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 7px;
+                    .tag {
+                        font-size: 1rem;
+                        color: rgba(93, 93, 93, 1);
+                    }
+                    .value {
+                        font-size: 1rem;
+                        color: rgba(47, 47, 47, 1);
+                        .big-value {
+                            font-size: 20px;
+                        }
+                        .small-value {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .room-total-details-value:last-child {
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                }
+
+                .guest-information-value:last-child {
+                    margin-bottom: 20px;
+                }
+                .guest-information-values,
+                .billing-address-values,
+                .payment-information-values {
+                }
+            }
+        }
+    }
+    .footer {
+        height: 84px;
+        margin-top: 16px;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #divToPrint,
+    #divToPrint * {
+        visibility: visible;
+    }
+    #divToPrint {
+        margin: 0 auto;
+    }
+}

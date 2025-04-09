@@ -1,0 +1,32 @@
+.my-bookings-container {
+    height: 100vh;  
+    .my-header-container {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 3;
+        height: 84px;
+        box-shadow:
+            2px 2px 5px rgba(0, 0, 0, 0.3),
+            0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .main-section {
+        min-height: calc(100vh - 168px);
+        padding: 2rem;
+        padding-top: 1rem;
+        margin: auto;
+        .main-section-title {
+            margin-bottom: 20px;
+            color: #130639;
+        }
+        .error-msg {
+            color: #c67979;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+    }
+    .footer{
+        height: 84px;
+    }
+}
