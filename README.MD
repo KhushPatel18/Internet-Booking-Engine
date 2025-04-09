@@ -1,2 +1,2 @@
-## Internet Booking Engine
-# find App related information in docs
+# Internet Booking Engine
+- Find App related information in docs
